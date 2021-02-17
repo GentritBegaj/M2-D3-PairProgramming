@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="bg-dark text-light">
     <!--
 
         ASSIGNMENT RULES
@@ -62,9 +62,25 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#deal-of-the-week">Deal of the week</a>
           </li>
-          <li class="nav-item dropdown">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#welcome-summer">Welcome Summer</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#deal-of-the-day">Deal of the day</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#last-minute">Last Minute</a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonial">Testimonials</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -91,11 +107,11 @@
               aria-disabled="true"
               >Disabled</a
             >
-          </li>
+          </li> -->
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-4 my-lg-0">
           <input
-            class="form-control mr-sm-2"
+            class="form-control mr-sm-2 my-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -110,7 +126,7 @@
         Ex 3) Add a Jumbotron section in which you present name and claim of the tour operator
     -->
 
-    <div class="jumbotron">
+    <div class="jumbotron bg-dark">
       <h1 class="display-4">Travel Agency</h1>
       <p class="lead">
         Coronavirus update. Our travel agents are ready and waiting to help you
@@ -127,7 +143,7 @@
       </p>
       <hr class="my-4" />
       <p>Contact us today to speak to one of our experienced travel agents.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <a class="btn btn-light btn-lg" href="#" role="button">Learn more</a>
     </div>
 
     <!--
@@ -141,8 +157,8 @@
       <button
         name="deal-of-the-week"
         type="button"
-        class="btn btn-secondary btn-lg justify-content-center"
-        onclick="hideShow(this.name)"
+        class="btn btn-secondary btn-lg justify-content-center my-2"
+        data-toggle="collapse" href="#deal-of-the-day"
       >
         Hide/Show Deal of the week
       </button>
@@ -200,8 +216,8 @@
       <button
         name="welcome-summer"
         type="button"
-        class="btn btn-secondary btn-lg"
-        onclick="hideShow(this.name)"
+        class="btn btn-secondary btn-lg my-2"
+        data-toggle="collapse" href="#welcome-summer"
       >
         Hide/Show Welcome Summer
       </button>
@@ -268,8 +284,8 @@
       <button
         name="deal-of-the-day"
         type="button"
-        class="btn btn-secondary btn-lg justify-content-center"
-        onclick="hideShow(this.name)"
+        class="btn btn-secondary btn-lg justify-content-center my-2"
+        data-toggle="collapse" href="#deal-of-the-day"
       >
         Hide/Show Deal of the day
       </button>
@@ -307,8 +323,8 @@
       <button
         name="last-minute"
         type="button"
-        class="btn btn-secondary btn-lg justify-content-center"
-        onclick="hideShow(this.name)"
+        class="btn btn-secondary btn-lg justify-content-center my-2"
+        data-toggle="collapse" href="#last-minute"
       >
         Hide/Show Last minute deals
       </button>
@@ -388,8 +404,8 @@
       <button
         name="testimonial"
         type="button"
-        class="btn btn-secondary btn-lg justify-content-center"
-        onclick="hideShow(this.name)"
+        class="btn btn-secondary btn-lg justify-content-center my-2"
+        data-toggle="collapse" href="#testimonial"
       >
         Hide/Show Testimonials
       </button>
@@ -481,13 +497,13 @@
                     ></i>
                   </a>
                 </div>
-                <div class="col-sm-11 text-white">
+                <div class="col-sm-11">
                   <div>
-                    <button type="button" class="btn btn-primary btn-lg">
-                      Contact Us
-                    </button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Contact Us</button>
+                      <br>
+
+                    </div>
                     <p>agencytravel.com</p>
-                  </div>
                 </div>
               </div>
             </div>
@@ -546,101 +562,46 @@
         Ex 15) Create a function that adds a "HOT" badge to all the "Welcome Summer" offers
         Ex 16) Create a function to delete all "cards" from the page -->
 
-    <div class="container-box">
-      <button
-        type="button"
-        class="btn btn-info btn-lg"
-        data-toggle="modal"
-        data-target="#myModal"
-      >
-        Contact Us
-      </button>
-    </div>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal fade text-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">×</button>
-            <h4 class="modal-title">Contact Us</h4>
+            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
           <div class="modal-body">
-            <form role="form" method="post" id="reused_form">
-              <p>
-                Send your message in the form below and we will get back to you
-                as early as possible.
-              </p>
-
+            <form>
               <div class="form-group">
-                <label for="name"> Name:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  name="name"
-                  required
-                  maxlength="50"
-                />
+                <label for="recipient-name" class="col-form-label">Email:</label>
+                <input type="email" class="form-control" id="recipient-name">
               </div>
               <div class="form-group">
-                <label for="email"> Email:</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  name="email"
-                  required
-                  maxlength="50"
-                />
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
               </div>
-              <div class="form-group">
-                <label for="name"> Message:</label>
-                <textarea
-                  class="form-control"
-                  type="textarea"
-                  name="message"
-                  id="message"
-                  placeholder="Your Message Here"
-                  maxlength="6000"
-                  rows="7"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="btn btn-lg btn-success btn-block"
-                id="btnContactUs"
-              >
-                Post It! →
-              </button>
             </form>
-            <div
-              id="success_message"
-              style="width: 100%; height: 100%; display: none"
-            >
-              <h3>Sent your message successfully!</h3>
-            </div>
-            <div
-              id="error_message"
-              style="width: 100%; height: 100%; display: none"
-            >
-              <h3>Error</h3>
-              Sorry there was an error sending your form.
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
     <script
       src="https://kit.fontawesome.com/7e4e45b727.js"
       crossorigin="anonymous"
     ></script>
     <script>
-      function hideShow(id) {
-        document.getElementById(id).classList.toggle("invisible");
-      }
+      // function hideShow(id) {
+      //   document.getElementById(id).classList.toggle("invisible");
+      // }
     </script>
   </body>
 </html>
